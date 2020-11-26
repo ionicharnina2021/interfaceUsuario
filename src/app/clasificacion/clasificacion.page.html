@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-label>Clasificacion</ion-label>
+  <ion-row class="ion-text-center">
+    <ion-col>puesto</ion-col>
+    <ion-col size="5">equipo</ion-col>
+    <ion-col>puntos</ion-col>
+    <ion-col>GF</ion-col>
+    <ion-col>GC</ion-col>
+  </ion-row>
+      <!-- <ion-row  [ngClass]="{'verde':esVerde(item.posicion),'naranja':esNaranja(item.posicion)}" *ngFor="let item of clasificacion" class="ion-text-center negrazo"> -->
+      <ion-row  *ngFor="let item of clasificacion" class="ion-text-center">
+    <ion-col>{{item.posicion}}</ion-col>
+    <ion-col size="5">{{item.equipo}}</ion-col>
+    <ion-col>{{item.puntos}}</ion-col>
+    <ion-col >{{item.GF}}</ion-col>
+    <ion-col>{{item.GC}}</ion-col>
+  </ion-row>
+  <ion-item>
+    <ion-button (click)="dameColor(1)">Haz algo</ion-button>
+  </ion-item>
+</ion-content>

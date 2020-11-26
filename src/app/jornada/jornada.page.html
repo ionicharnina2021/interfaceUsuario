@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <!-- <ion-title class="ion-text-center" >Resultados</ion-title> -->
+  </ion-toolbar>
+  <ion-segment value="jornada" (ionChange)="segmentChanged($event)">
+    <ion-segment-button value="jornada">
+      <ion-label>Jornadas</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="clasificacion">
+      <ion-label>Clasificacion</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+  <ion-row class="col1">
+    <ion-col  class=ion-text-center>
+      <ion-label>
+        Jornada nº {{jornada}}      
+      </ion-label>
+    </ion-col>
+  </ion-row>
+  <ion-row class="col2">
+    <ion-col  class="ion-text-center">Con fecha {{fecha|date}}</ion-col>
+  </ion-row>
+</ion-header>
+<ion-content *ngIf="visible" >  
+  <ion-card *ngFor="let item of resultado" (click)="pasaDato(item)">
+    <ion-card-header class="ion-text-center">
+        <ion-label>{{item.casa}} : {{item.visitante}}</ion-label>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-row>
+        <ion-col class="ion-text-center" >
+            {{item.golesCasa}}:{{item.golesFuera}}
+        </ion-col>
+      </ion-row>     
+    </ion-card-content>   
+  </ion-card>
+
+</ion-content>
